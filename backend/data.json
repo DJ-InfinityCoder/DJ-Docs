@@ -1,0 +1,955 @@
+{
+  "subjects": [
+    {
+      "subjectCode": "os",
+      "subjectName": "Operating Systems",
+      "subjectIntroContent": [
+        {
+          "type": "title",
+          "content": "Introduction to Operating Systems"
+        },
+        {
+          "type": "paragraph",
+          "content": "Imagine your computer is a busy office, and the Operating System (OS) is the office manager, making sure everything runs smoothly—allocating tasks, organizing data, and keeping things secure. Whether you’re gaming, working on a project, or running an app, the OS is constantly in the background making sure that your device performs at its best. But how does it do that? Let’s dive in!"
+        },
+        {
+          "type": "paragraph",
+          "content": "Operating systems are the brains behind the hardware and software interaction. They control everything from processes (what your apps and tasks are doing) to memory management (how your computer stores and retrieves data) to file handling (how your files are organized and accessed). If you want to understand what makes your computer tick, this is the place to start."
+        },
+        {
+          "type": "h3",
+          "content": "What's Inside the OS?"
+        },
+        {
+          "type": "ol_withContent",
+          "content": [
+            {
+              "title": "Process Management",
+              "content": "Every time you open an app, you're running a process. But what happens when several apps open at once? How does the system decide which one gets attention first? This is where process scheduling comes in..."
+            },
+            {
+              "title": "Memory Management",
+              "content": "Your computer’s memory is like its workspace. The more apps you open, the more crowded it gets..."
+            },
+            {
+              "title": "File Systems",
+              "content": "Ever wondered how your computer organizes files? From your holiday photos to project docs..."
+            },
+            {
+              "title": "I/O Systems",
+              "content": "When you click, type, or interact with your computer, that’s Input/Output (I/O) in action..."
+            },
+            {
+              "title": "Protection and Security",
+              "content": "Finally, let’s talk about keeping things safe. How does the OS protect your data..."
+            }
+          ]
+        }
+      ],
+      "chapters": [
+        {
+          "chapterCode": "introduction-to-os",
+          "chapterName": "Introduction to OS",
+          "chapterIntroContent": [
+            {
+              "type": "title",
+              "content": "Introduction to Operating Systems"
+            },
+            {
+              "type": "h3",
+              "content": "What is Operating System?"
+            },
+            {
+              "type": "ol",
+              "content": [
+                " `Intermediatory`– Acts as an intermediary between user & hardware.",
+                " `Resource Manager/Allocator`– Operating system controls and coordinates the use of system resources among various application programs in an unbiased fashion.",
+                " `Platform`– OS provides platform on which other application programs can be installed, provides the environment within which programs are executed."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": "Examples: ubuntu, mac, window, android, ios, linux, tizen, Debian, chrome etc."
+            },
+            {
+              "type": "h3",
+              "content": "Goals and Functions of operating system"
+            },
+            {
+              "type": "paragraph",
+              "content": "Goals are the ultimate destination, but we follow functions to implement goals."
+            }
+          ],
+          "topics": [
+            {
+              "topicId": "goals-of-operating-system",
+              "topicName": "Goals of operating system",
+              "contentList": ["Primary goals"],
+              "mainContent": [
+                {
+                  "heading": "Goals of operating system",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": "Primary goals:"
+                    },
+                    {
+                      "type": "ul",
+                      "content": [
+                        "Make the computer System convenient and easy to use",
+                        "Ensure efficient utilization of resources (think processor time, printer, RAM, …)"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "topicId": "function-of-operating-system",
+              "topicName": "Functions of OS",
+              "contentList": ["Functions of Operating System"],
+              "mainContent": [
+                {
+                  "heading": "Functions of Operating System",
+                  "content": [
+                    {
+                      "type": "ol_withContent",
+                      "content": [
+                        {
+                          "title": "Process Management",
+                          "content": "Involves handling the creation, scheduling, and termination of processes, which are executing programs."
+                        },
+                        {
+                          "title": "Memory Management",
+                          "content": "Manages allocation and deallocation of physical and virtual memory spaces to various programs."
+                        },
+                        {
+                          "title": "I/O Device Management",
+                          "content": "Handles I/O operations of peripheral devices like disks, keyboards, etc., including buffering and caching."
+                        },
+                        {
+                          "title": "File Management",
+                          "content": "Manages files on storage devices, including their information, naming, permissions, and hierarchy."
+                        },
+                        {
+                          "title": "Network Management",
+                          "content": "Manages network protocols and functions, enabling the OS to establish network connections and transfer data."
+                        },
+                        {
+                          "title": "Security & Protection",
+                          "content": "Ensures system protection against unauthorized access and other security threats through authentication, authorization, and encryption."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "topicId": "evolution-of-operating-system",
+              "topicName": "Evolution of OS",
+              "contentList": [
+                "Batch Operating System",
+                "Spooling",
+                "Multiprogramming Operating System",
+                "Multitasking Operating System",
+                "Multiprocessing Operating System/ tightly coupled system",
+                "Real time Operating system",
+                "Distributed OS"
+              ],
+              "mainContent": [
+                {
+                  "heading": "Batch Operating System",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": "Early computers were not interactive device, there user use to prepare a job which consist three parts-"
+                    },
+                    {
+                      "type": "ul",
+                      "content": [
+                        "Program",
+                        "Control information",
+                        "Input data"
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Only one job is given input at a time as there was no memory, computer will take the input then process it and then generate output."
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Common input/output device were punch card or tape drives. So these devices were very slow, and processor remain ideal most of the time."
+                    },
+                    {
+                      "type": "img",
+                      "src": "https://raw.githubusercontent.com/DJ-InfinityCoder/db/refs/heads/main/db/assets/os/ch01/img/punch-card-machine.webp",
+                      "alt": "Punch Card Machine"
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "To speed up the processing job with similar types (for e.g. FORTRAN jobs, COBOL jobs etc. ) were batched together and were run through the processor as a group (batch)."
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "In some system grouping is done by the operator while in some systems it is performed by the 'Batch Monitor' resided in the low end of main memory)."
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Then jobs (as a deck of punched cards) are bundled into batches with similar requirement."
+                    },
+                    {
+                      "type": "img",
+                      "src": "https://raw.githubusercontent.com/DJ-InfinityCoder/db/main/db/assets/os/ch01/img/Batch-processing-system.png",
+                      "alt": "Batch Operating System"
+                    }
+                  ]
+                },
+                {
+                  "heading": "Spooling",
+                  "content": [
+                    {
+                      "type": "h4",
+                      "content": "Simultaneous peripheral operations online"
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "In a computer system input-output devices, such as printers are very slow relative to the performance of the rest of the system."
+                    },
+                    {
+                      "type": "img",
+                      "src": "https://raw.githubusercontent.com/DJ-InfinityCoder/db/main/db/assets/os/ch01/img/spooling.jpg",
+                      "alt": "Spooling"
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "The most common implementation of spooling can be found in typical input/output devices such as the keyboard, mouse and printer. For example, in printer spooling, the documents/files that are sent to the printer are first stored in the memory. Once the printer is ready, it fetches the data and prints it."
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Ever had your mouse or keyboard freeze briefly? We often click around to test if it's working. When it unfreezes, all those stored clicks execute rapidly due to the device's spool."
+                    }
+                  ]
+                },
+                {
+                  "heading": "Multiprogramming Operating System",
+                  "content": [
+                    {
+                      "type": "h4",
+                      "content": "Definition"
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Multiprogramming in operating systems (OS) is a method where multiple jobs(programs) are loaded into memory and the CPU executes them concurrently. Instead of waiting for a single program to complete, the CPU rapidly switches between programs, allowing for efficient utilization of system resources."
+                    },
+                    {
+                      "type": "ul",
+                      "content": [
+                        "Increased CPU Utilization: While one program is waiting for input/output (I/O) operations, another program can be processed, reducing idle CPU time.",
+                        "Concurrency: Multiple processes are active at the same time, though they may not all be running simultaneously. The OS decides which process gets CPU time based on scheduling algorithms.",
+                        "Memory Sharing: The OS keeps multiple programs in memory, managing their execution while preventing conflicts.",
+                        "I/O Overlap: While one process is waiting for I/O operations (e.g., disk read), the CPU can process another program."
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "“Idle CPU time refers to the period when the CPU (Central Processing Unit) is not actively processing any instructions.”"
+                    },
+                    {
+                      "type": "img",
+                      "src": "https://raw.githubusercontent.com/DJ-InfinityCoder/db/main/db/assets/os/ch01/img/multiprogramming-operating-system.png",
+                      "alt": "Multiprogramming OS"
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Processor किसी के लिए wait नहीं करता"
+                    },
+                    {
+                      "type": "h4",
+                      "content": "Advantages of Multiprogramming Operating System"
+                    },
+                    {
+                      "type": "ul",
+                      "content": [
+                        "Efficiency: Reduces idle CPU time by overlapping I/O and computation.",
+                        "Better Resource Utilization: Memory, CPU, and I/O devices are more effectively used.",
+                        "Higher Throughput: More tasks are completed in a given time, increasing system efficiency."
+                      ]
+                    },
+                    {
+                      "type": "h4",
+                      "content": "Disadvantages of Multiprogramming Operating System"
+                    },
+                    {
+                      "type": "ul",
+                      "content": [
+                        "Complexity in Management: Requires sophisticated algorithms to manage memory, CPU scheduling, and process synchronization.",
+                        "Security Risks: With multiple processes in memory, there’s a risk of data leakage between programs if isolation is not enforced."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "heading": "Multitasking Operating System",
+                  "content": [
+                    {
+                      "type": "h4",
+                      "content": "Definition"
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Running multiple tasks (or processes) at the same time by quickly switching between them. It creates an illusion that all tasks are running simultaneously, though in reality, the OS switches between tasks very rapidly."
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Example: On a personal computer, you can open a browser, music player, and word processor simultaneously, and the OS will switch between them as needed to keep them all running."
+                    },
+                    {
+                      "type": "img",
+                      "src": "https://raw.githubusercontent.com/DJ-InfinityCoder/db/main/db/assets/os/ch01/img/multitasking-operating-system.png",
+                      "alt": "Multitasking"
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Time-Sharing is a specific form of multitasking that supports multiple users on the same computer system The operating system allocates a small time slice to each user or process in a cyclic manner, allowing multiple users to use the same system simultaneously (like multiple people accessing a server at once)."
+                    }
+                  ]
+                },
+                {
+                  "heading": "Multiprocessing Operating System/ tightly coupled system",
+                  "content": [
+                    {
+                      "type": "h4",
+                      "content": "Definition"
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Multiprocessing Operating Systems refer to systems that use multiple CPUs or cores to execute multiple processes simultaneously. These multiple CPU’s share system bus, memory and other peripheral devices."
+                    },
+                    {
+                      "type": "h4",
+                      "content": "Key Features of Multiprocessing Operating Systems:"
+                    },
+                    {
+                      "type": "ol_withContent",
+                      "content": [
+                        {
+                          "title": "Parallel Execution: ",
+                          "content": "Multiple processes or threads are executed at the same time on different processors or cores. This allows for true parallel execution of tasks."
+                        },
+                        {
+                          "title": "Improved Performance: ",
+                          "content": "By utilizing multiple CPUs or cores, the system can process more instructions per second, leading to better performance and faster completion of tasks."
+                        },
+                        {
+                          "title": "Increased Reliability: ",
+                          "content": "If one processor fails, others can continue to operate, enhancing system reliability and fault tolerance."
+                        },
+                        {
+                          "title": "Scalability: ",
+                          "content": "The system can be scaled up by adding more processors or cores, allowing it to handle more demanding workloads."
+                        },
+                        {
+                          "title": "Resource Sharing: ",
+                          "content": "Processes can share system resources like memory and I/O devices efficiently, while the OS manages synchronization and communication between processes."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Example: Generally used in the fields like artificial intelligence and expert system, image processing, weather forecasting etc."
+                    },
+                    {
+                      "type": "table",
+                      "content": [
+                        {
+                          "columns": [
+                            "Aspect",
+                            "Multiprogramming",
+                            "Multiprocessing"
+                          ],
+                          "rows": [
+                            [
+                              "Definition",
+                              "Running multiple processes on a single CPU by switching between them.",
+                              "Running multiple processes simultaneously on multiple CPUs or cores."
+                            ],
+                            [
+                              "Execution",
+                              "Processes are executed sequentially by switching quickly.",
+                              "Processes are executed truly in parallel on different CPUs or cores."
+                            ],
+                            [
+                              "CPU Usage",
+                              "Utilizes a single CPU by context switching between processes.",
+                              "Utilizes multiple CPUs or cores, allowing for parallel processing."
+                            ],
+                            [
+                              "Objective",
+                              "Increase CPU utilization by reducing idle time.",
+                              "Increase processing power and performance through parallel execution."
+                            ],
+                            [
+                              "Resource Sharing",
+                              "Processes share a single CPU and memory, switching as needed.",
+                              "Processes share multiple CPUs/cores and memory, with true parallelism."
+                            ],
+                            [
+                              "System Complexity",
+                              "Less complex in terms of CPU management.",
+                              "More complex due to synchronization and communication between CPUs/cores."
+                            ],
+                            [
+                              "Performance Impact",
+                              "Improved performance by reducing CPU idle time but limited to one CPU's capacity.",
+                              "Greater performance gains by utilizing multiple processors/cores."
+                            ],
+                            [
+                              "Scalability",
+                              "Limited by the capabilities of a single CPU.",
+                              "Can be scaled up by adding more CPUs or cores."
+                            ],
+                            [
+                              "Fault Tolerance",
+                              "Lower, as only one CPU is involved; if it fails, the system stops.",
+                              "Higher, as failure of one CPU does not necessarily stop the system."
+                            ],
+                            [
+                              "Scheduling",
+                              "Managed by the OS to switch between processes efficiently.",
+                              "Managed by the OS to distribute tasks across multiple CPUs/cores."
+                            ],
+                            [
+                              "Example Use",
+                              "Running multiple applications on a single-core computer (e.g., a desktop PC).",
+                              "Running high-performance applications on a multi-core server (e.g., a database server)."
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "heading": "Real time Operating system",
+                  "content": [
+                    {
+                      "type": "h4",
+                      "content": "Definition"
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "A Real-Time Operating System (RTOS) is designed to process data and respond to events within a strict time constraint. Unlike general-purpose operating systems, which focus on maximizing throughput and user experience, an RTOS prioritizes meeting deadlines and providing predictable performance."
+                    },
+                    {
+                      "type": "h4",
+                      "content": "Types of Real-Time Systems"
+                    },
+                    {
+                      "type": "h5",
+                      "content": "Hard Real-Time Systems"
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Definition: Systems where missing a deadline could result in catastrophic consequences."
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Example: Airbag deployment systems in vehicles, where a delay can have serious safety implications."
+                    },
+                    {
+                      "type": "h5",
+                      "content": "Soft Real-Time Systems"
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Definition: Systems where deadlines are important but missing them occasionally does not have severe consequences."
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Example: Multimedia streaming, where occasional delays may impact quality but not functionality."
+                    }
+                  ]
+                },
+                {
+                  "heading": "Distributed OS",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": "Distributed Operating Systems (Distributed OS) manage a group of independent computers and make them appear to the users as a single coherent system. These systems aim to improve performance, resource sharing, and reliability by distributing computation, data, and tasks across multiple interconnected computers."
+                    },
+                    {
+                      "type": "img",
+                      "src": "https://raw.githubusercontent.com/DJ-InfinityCoder/db/main/db/assets/os/ch01/img/Distributed-OS.webp",
+                      "alt": "Distributed OS"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "chapterCode": "operating-system-structure",
+          "chapterName": "Operating System Structure",
+          "chapterIntroContent": [
+            {
+              "type": "title",
+              "content": "Operating System Services"
+            },
+            {
+              "type": "img",
+              "src": "https://raw.githubusercontent.com/DJ-InfinityCoder/db/refs/heads/main/db/assets/os/ch02/img/operating-system-services.jpg",
+              "alt": "Operating System Services"
+            },
+            {
+              "type": "h5",
+              "content": "Operating System = Interface + Kernels *(ek tarike se)"
+            }
+          ],
+          "topics": [
+            {
+              "topicId": "operating-system-interface",
+              "topicName": "Operating System Interface",
+              "contentList": [
+                "Operating System Interface",
+                "Command-Line Interface",
+                "Graphical User Interface"
+              ],
+              "mainContent": [
+                {
+                  "heading": "Operating System Interface",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": "Operating systems provide interfaces that allow users to interact with the system and control its operations. These interfaces can be broadly classified into two types: Command-Line Interface (CLI) and Graphical User Interface (GUI)."
+                    }
+                  ]
+                },
+                {
+                  "heading": "Command-Line Interface",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": "A Command-Line Interface (CLI) is a text-based interface where users interact with the operating system by typing commands into a console or terminal. The user types specific instructions, which the system then interprets and executes."
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Example Commands:"
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Windows:"
+                    },
+                    {
+                      "type": "ul",
+                      "content": [
+                        "dir: Lists files and directories.",
+                        "cd: Change the directory.",
+                        "copy: Copy files from one location to another."
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Linux/Unix:"
+                    },
+                    {
+                      "type": "ul",
+                      "content": [
+                        "ls: Lists files in a directory.",
+                        "cd: Change the directory.",
+                        "cp: Copy files from one location to another.",
+                        "rm: Remove (delete) a file."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "heading": "Graphical User Interface",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": "A Graphical User Interface (GUI) is a visual interface that allows users to interact with the operating system using graphical elements such as windows, icons, buttons, and menus. GUIs make the system more accessible to non-technical users by abstracting complex operations into simple point-and-click actions."
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Example GUIs:"
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Windows:"
+                    },
+                    {
+                      "type": "ul",
+                      "content": [
+                        "Taskbar, Start Menu, and File Explorer provide access to applications, settings, and files through a graphical interface."
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "macOS:"
+                    },
+                    {
+                      "type": "ul",
+                      "content": [
+                        "Dock, Finder, and Menu Bar allow users to launch applications and manage files in a visually appealing way."
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Linux (e.g., GNOME, KDE):"
+                    },
+                    {
+                      "type": "ul",
+                      "content": [
+                        "Desktop environments like GNOME or KDE provide user-friendly interfaces with graphical tools for system management."
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Because a mouse is impractical for most mobile systems, smartphones and handheld tablet computers typically use a touchscreen interface."
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Here, users interact by making gestures on the touchscreen—for example, pressing and swiping fingers across the screen."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "topicId": "kernel",
+              "topicName": "Kernel",
+              "contentList": [
+                "Kernel",
+                "Function of Kernels",
+                "Does kernel run all the time?"
+              ],
+              "mainContent": [
+                {
+                  "heading": "Kernel",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": "The kernel is the core component of an operating system (OS). It is collection of functions that provide essential functionalities to OS. Kernel is a part of OS that is Closest to the hardware, and handles important functionalities like managing memory, network, file, processes, system call …"
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "The kernel operates in a privileged mode known as kernel mode (or supervisor mode), where it has unrestricted access to the hardware, unlike normal applications that run-in user mode with limited access."
+                    }
+                  ]
+                },
+                {
+                  "heading": "Function of Kernels",
+                  "content": [
+                    {
+                      "type": "ol_withContent",
+                      "content": [
+                        {
+                          "title": "Process Management",
+                          "content": "The kernel manages the creation, execution, and termination of processes. It handles CPU scheduling, process switching, and multitasking, ensuring efficient use of the CPU."
+                        },
+                        {
+                          "title": "Memory Management",
+                          "content": "The kernel controls the allocation and deallocation of memory to processes. It manages virtual memory, paging, and ensures memory protection between processes."
+                        },
+                        {
+                          "title": "File System Management",
+                          "content": "Manages file operations like creation, deletion, reading, and writing."
+                        },
+                        {
+                          "title": "Device Management",
+                          "content": "The kernel communicates with hardware devices through device drivers, managing input/output (I/O) operations between hardware and applications."
+                        },
+                        {
+                          "title": "Interrupt Handling",
+                          "content": "Responds to interrupts from hardware (e.g., when a key is pressed or a network packet arrives)."
+                        },
+                        {
+                          "title": "System Calls Handling",
+                          "content": "Applications use system calls (e.g., read(), write(), fork()) to request services from the kernel, such as file operations or process management."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "heading": "Does kernel run all the time?",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": "No, the kernel does not run all the time. It only runs when necessary, such as when managing processes, handling interrupts, or performing system calls."
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "The kernel typically runs in two main scenarios:"
+                    },
+                    {
+                      "type": "ol_withContent",
+                      "content": [
+                        {
+                          "title": "System Events",
+                          "content": "When a hardware interrupt occurs (e.g., I/O device needs attention) or an exception is raised (e.g., illegal memory access), the kernel steps in to handle it."
+                        },
+                        {
+                          "title": "System Calls",
+                          "content": "When a user program requests services (e.g., reading a file or allocating memory), the CPU switches to kernel mode for the kernel to execute the request."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "topicId": "interrupt",
+              "topicName": "Interrupt",
+              "contentList": ["Interrupt"],
+              "mainContent": [
+                {
+                  "heading": "Interrupt",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": "Interrupts are signals sent by hardware or software to the kernel to indicate that an event needs immediate attention."
+                    },
+                    {
+                      "type": "img",
+                      "src": "https://raw.githubusercontent.com/DJ-InfinityCoder/db/refs/heads/main/db/assets/os/ch02/img/interrupt.png",
+                      "alt": "Types of Interrupt"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "topicId": "system-call",
+              "topicName": "System Call",
+              "contentList": [
+                "System Call",
+                "How System Calls Work",
+                "Examples of System Calls"
+              ],
+              "mainContent": [
+                {
+                  "heading": "System Call",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": "System calls are the primary way that user-space applications interact with the kernel. Since user-space programs run in restricted mode (user mode) and don’t have direct access to hardware or critical resources, they rely on the kernel to perform privileged tasks through system calls."
+                    }
+                  ]
+                },
+                {
+                  "heading": "How System Calls Work",
+                  "content": [
+                    {
+                      "type": "ol_withContent",
+                      "content": [
+                        {
+                          "title": "Requesting OS Services",
+                          "content": "A user program cannot directly access or control hardware (e.g., memory, I/O devices). Instead, it makes a system call, which asks the operating system to perform the task on its behalf."
+                        },
+                        {
+                          "title": "Switch to Kernel Mode",
+                          "content": "When a system call is invoked, the system switches from user mode (limited privileges) to kernel mode (full privileges), where the kernel can perform operations like managing resources, I/O operations, or handling files."
+                        },
+                        {
+                          "title": "Return to User Mode",
+                          "content": "Once the system call completes its task, the kernel returns the results (if any) to the user program and switches back to user mode."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "heading": "Examples of System Calls",
+                  "content": [
+                    {
+                      "type": "ul_withContent",
+                      "content": [
+                        {
+                          "title": "Process Control",
+                          "content": "fork(), exec(), wait(), exit()"
+                        },
+                        {
+                          "title": "File Operations",
+                          "content": "open(), read(), write(), close()"
+                        },
+                        {
+                          "title": "Device Management",
+                          "content": "ioctl(), read(), write()"
+                        },
+                        {
+                          "title": "Memory Management",
+                          "content": "mmap(), brk()"
+                        },
+                        {
+                          "title": "Networking",
+                          "content": "socket(), connect(), send(), recv()"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "img",
+                      "src": "https://raw.githubusercontent.com/DJ-InfinityCoder/db/refs/heads/main/db/assets/os/ch02/img/system-call.jpg",
+                      "atl": "System Call"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "topicId": "structures-of-operating-systems",
+              "topicName": "Structures of Operating Systems",
+              "contentList": [
+                "Monolithic Structure",
+                "Layered Structure",
+                "Microkernel Structure",
+                "Solaris Modular Structure",
+                "Hybrid Structure"
+              ],
+              "mainContent": [
+                {
+                  "heading": "Monolithic Structure",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": "In a monolithic OS, the entire operating system operates in kernel mode, where all components (like device drivers, file systems, process management, memory management) work together as a single, large, cohesive program."
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Examples:"
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "UNIX, MS-DOS"
+                    },
+                    {
+                      "type": "img",
+                      "src": "https://raw.githubusercontent.com/DJ-InfinityCoder/db/refs/heads/main/db/assets/os/ch02/img/monolithic-structure.svg",
+                      "alt": "Monolithic Structure"
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "MS-DOS – written to provide the most functionality in the least space"
+                    },
+                    {
+                      "type": "ul",
+                      "content": [
+                        "Not divided into modules",
+                        "Although MS-DOS has some structure, its interface and levels of functionality are not well separated."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "heading": "Layered Structure",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": "The OS is divided into a number of layers(levels), each built on top of lower layers. The bottom layer (layer 0), is the hardware; the highest (layer N ) is the user interface."
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Layer N interacts with Layer N-1 (below it) to use the services provided by that lower layer."
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Layer N provides services to Layer N+1 (above it), making those services available to higher layers or user applications."
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Example: THE operating system, early versions of UNIX."
+                    },
+                    {
+                      "type": "img",
+                      "src": "https://raw.githubusercontent.com/DJ-InfinityCoder/db/refs/heads/main/db/assets/os/ch02/img/layered-structure.png",
+                      "alt": "Layered Structure"
+                    }
+                  ]
+                },
+                {
+                  "heading": "Microkernel Structure",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": "In a microkernel structure, only the essential functions (like communication between processes, low-level memory management, and simple I/O) run in kernel mode, while most services, such as file systems and device drivers, run in user space as separate processes."
+                    },
+                    {
+                      "type": "ul_withContent",
+                      "content": [
+                        {
+                          "title": "Examples",
+                          "content": "MINIX, QNX, Mach."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "img",
+                      "src": "https://raw.githubusercontent.com/DJ-InfinityCoder/db/refs/heads/main/db/assets/os/ch02/img/microkernel-structure.png",
+                      "alt": "Microkernel Structure"
+                    },
+                    {
+                      "type": "h4",
+                      "content": "Advantages of Microkernel Structure"
+                    },
+                    {
+                      "type": "ul_withContent",
+                      "content": [
+                        {
+                          "title": "Advantage",
+                          "content": "Easier to extend and maintain as new services can be added without modifying the kernel."
+                        },
+                        {
+                          "title": "Disadvantages",
+                          "content": "Can be slower because of the overhead of message passing between kernel and user processes."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "heading": "Solaris Modular Structure",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": "In this, the system is organized into separate, interchangeable components. This allows for dynamic updates, flexible management of services, and efficient resource allocation, while maintaining system stability and performance."
+                    },
+                    {
+                      "type": "paragraph",
+                      "content": "Modules such as device drivers and file systems can be loaded and unloaded dynamically without rebooting the system."
+                    },
+                    {
+                      "type": "img",
+                      "src": "https://raw.githubusercontent.com/DJ-InfinityCoder/db/refs/heads/main/db/assets/os/ch02/img/solaris-modular-structure.png",
+                      "alt": "Solaris Modular Structure"
+                    }
+                  ]
+                },
+                {
+                  "heading": "Hybrid Structure",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": "Most modern operating systems use a hybrid structure, which combines features of monolithic and microkernel designs. The core kernel still operates in a monolithic fashion, but some services are implemented in user space or as modules, achieving a balance between performance and modularity."
+                    },
+                    {
+                      "type": "ul_withContent",
+                      "content": [
+                        {
+                          "title": "Examples",
+                          "content": "Windows, macOS, modern Linux distributions."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

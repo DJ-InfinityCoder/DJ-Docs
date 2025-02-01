@@ -1,0 +1,157 @@
+.sidebar {
+  position: fixed;
+  top: 65px;
+  left: 0;
+  background-color: var(--white);
+  padding: 10px 24px;
+  width: 300px;
+  height: calc(100vh - 65px);
+  border-right: 1.5px solid var(--teal-light);
+  overflow-y: auto;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.sidebarContent {
+  margin-top: 10px;
+}
+
+.linksContainer {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.linkItem {
+  list-style: none;
+  margin-bottom: 0.3rem;
+}
+
+
+.dropdown {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown:hover .linkText,
+.dropdown:hover .icon {
+  color: var(--teal);
+}
+
+.dropdown.activeParent .linkText,
+.dropdown.activeParent .icon {
+  color: var(--teal);
+  font-weight: bold;
+}
+
+.dropdown.activeParent .icon {
+  font-size: 0.85em
+}
+
+.linkText {
+  font-family: "Lora", serif;
+  padding: 5px 0;
+  width: 100%;
+  font-size: 1.1rem;
+  font-optical-sizing: auto;
+  display: inline-block;
+  margin-left: 0;
+  text-decoration: none;
+  color: var(--dark-gray);
+  height: 100%;
+  font-weight: 500;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(0deg);
+  margin-top: 2.5px;
+}
+
+.icon.rotate {
+  transform: rotate(90deg);
+}
+
+.subLinks {
+  padding: 0.5rem 0;
+  margin-left: 5px;
+  border-left: 1.5px solid var(--teal);
+}
+
+.sublinkItem {
+  list-style: none;
+}
+
+.subLinks .linkText {
+  color: var(--li-light-color);
+  width: 95%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  transition: color 0.1s ease-in-out;
+}
+
+.subLinks .linkText:hover {
+  color: var(--black);
+  cursor: pointer;
+}
+
+
+.subLinks .linkText.active {
+  background-color: var(--teal);
+  color: var(--white);
+}
+
+.subLinks .linkItem {
+  padding: 2px 0;
+}
+
+
+.sidebar.darkMode {
+  background-color: var(--light-dark);
+}
+
+.sidebar.darkMode .linkText:hover{
+  color: var(--teal);
+}
+
+.sidebar.darkMode .linkText {
+  color: var(--white);
+}
+
+
+.sidebar.darkMode .subLinks .linkText {
+  color: var(--li-dark-color);
+  transition: color 0.1s ease-in-out;
+}
+
+.sidebar.darkMode .subLinks .linkText:hover {
+  color: var(--white);
+}
+
+.sidebar.darkMode .subLinks .linkText.active {
+  color: var(--black);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -300px;
+    opacity: 0;
+    z-index: 10;
+    background-color: var(--off-white);
+  }
+  
+  .sidebar.show {
+    left: 0;
+    opacity: 1;
+  }
+}

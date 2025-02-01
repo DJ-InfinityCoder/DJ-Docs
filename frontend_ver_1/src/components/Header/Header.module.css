@@ -1,0 +1,344 @@
+.header {
+  width: 100vw;
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--off-white);
+  border-bottom: 1.5px solid var(--teal-light);
+  color: var(--dark-gray);
+  padding: 10px 24px;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+}
+
+.leftSection,
+.centerSection,
+.rightSection {
+  display: flex;
+  align-items: center;
+}
+
+.leftSection {
+  width: 276px;
+}
+
+.centerSection {
+  width: calc(100% - 610px);
+  justify-content: center;
+}
+
+.rightSection {
+  width: 335px;
+  justify-content: right;
+}
+
+.logo {
+  color: var(--teal);
+  font-size: 26px;
+  font-family: "Merriweather", serif !important;
+  font-weight: 600;
+}
+
+
+
+.header.darkMode {
+  background-color: var(--light-dark);
+  border-bottom: 1.5px solid var(--li-light-color);
+}
+
+.searchBar:hover {
+  cursor: pointer;
+}
+
+.searchBar.darkMode {
+  background-color: var(--dark-dark);
+  border-color: var(--li-light-color);
+}
+
+.searchBar:focus {
+  border: 1.5px solid var(--teal);
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 10px;
+  color: inherit;
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.iconButton:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.header.darkMode .iconButton:hover {
+  background-color: rgba(223, 221, 221, 0.2);
+}
+
+.searchIcon {
+  display: none;
+}
+
+.hamburger {
+  margin-left: 10px;
+  padding: 6.5px;
+  display: none;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.hamburger:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.hamburger .line {
+  display: block;
+  width: 25px;
+  height: 2.5px;
+  margin: 4.5px auto;
+  background-color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger.isActive {
+  transform: rotate(45deg);
+}
+
+.hamburger:before {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  width: 36px;
+  height: 36px;
+  border: 2px solid transparent;
+  top: calc(50% - 18px);
+  left: calc(50% - 18px);
+  border-radius: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger.isActive:before {
+  border: 2px solid #666;
+}
+
+.hamburger.isActive .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.isActive .line:nth-child(1) {
+  border-radius: 50%;
+  transform: translateY(7px) rotate(5deg);
+}
+
+.hamburger.isActive .line:nth-child(3) {
+  border-radius: 50%;
+  transform: translateY(-6.5px) rotate(85deg);
+}
+
+.header.darkMode .hamburger .line {
+  background-color: white;
+}
+
+.header.darkMode .hamburger:hover {
+  background-color: rgba(223, 221, 221, 0.2);
+}
+
+@media (max-width: 768px) {
+
+  .searchBarContainer {
+    display: none;
+  }
+
+  .searchBarcontainerOpen {
+    display: block;
+    left: 130px;
+
+  }
+
+  .closeButtonMB {
+    left: 47%;
+  }
+
+
+  .searchIcon {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .rightSection {
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    top: 0;
+    padding: 12px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .searchBarcontainerOpen {
+    display: block;
+    left: 0px;
+
+  }
+
+  .closeButtonMB {
+    left: 42%;
+    transform: translateX(-42%);
+  }
+  
+  .searchOpen{
+    left: 0;
+  }
+
+
+  .leftSection {
+    margin-left: 10px;
+  }
+
+  .rightSection {
+    margin-right: 10px;
+  }
+
+  .iconButton {
+    margin: 0 3px;
+  }
+
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(0px);
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.searchBarContainer {
+  z-index: 11 !important;
+  position: fixed;
+  max-width: 500px;
+  width: 100%;
+  height: 45px !important;
+  transition: all 0.3s ease-in-out;
+  border: 1.5px solid var(--light-gray);
+  border-radius: 10px;
+}
+
+.searchBar {
+  position: absolute;
+  width: 100%;
+  padding: 13.5px 24px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+
+.searchOpen {
+  border-bottom: 2px solid black;
+}
+
+.searchSuggestion {
+  position: absolute;
+  top: 45px;
+  padding: 13.5px 24px;
+  width: 100%;
+  height: 20vh;
+  background-color: white;
+  border-radius: 10px;
+  border-top: 2px solid black;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+.searchSuggestion.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
+.header.darkMode .searchSuggestion {
+  border-top: 2px solid white;
+  background-color: var(--dark-dark);
+  color: #fff;
+}
+
+.header.darkMode .searchOpen {
+  border-bottom: 2px solid white;
+}
+
+
+
+.header.darkMode .searchBar {
+  color: white;
+}
+
+.header.darkMode .searchBar:focus {
+  border: none;
+}
+
+.shortKey {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #eeefef;
+  border-radius: 5px;
+
+  p {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    font-family: "Libre Baskerville", serif;
+  }
+}
+
+.header.darkMode .shortKey {
+  background-color: var(--light-dark);
+  color: white;
+}
+
+.closeButton {
+  position: absolute;
+  top: 13vh;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border: 2px solid black;
+  z-index: 11;
+  background-color: gray;
+  border-radius: 50%;
+  display: flex;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.closeButton:hover {
+  background-color: rgb(95, 94, 94);
+}
