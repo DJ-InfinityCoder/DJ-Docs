@@ -1,304 +1,863 @@
-/* General Layout */
-.app{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.container, .darkContainer {
-  display: flex;
-  max-width: 900px;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  font-family: 'Roboto', sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.container {
-  background: #ffffff;
-  color: #333;
-}
-
-.darkContainer {
-  background: #121212;
-  color: #eaeaea;
-}
-
-/* Navbar */
-.navbar {
+.app {
   background-color: white;
-  width: 100%;
+}
+
+.darkMode {
+  background-color: var(--dark-dark);
+}
+
+.navbar {
+  width: 100vw;
+  height: 65px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
+  background-color: var(--off-white);
+  border-bottom: 1.5px solid var(--teal-light);
+  color: var(--dark-gray);
+  padding: 10px 24px;
+  position: fixed;
   top: 0;
-  padding: 1rem 0;
-  z-index: 10;
-  border-bottom: 2px solid teal;
+  z-index: 9;
 }
 
-.navLeft h1 {
-  font-size: 2.5rem;
-  color: teal;
-  font-family: "Merriweather", serif;
+.logo {
+  color: var(--teal);
+  font-size: 26px;
+  font-family: "Merriweather", serif !important;
+  font-weight: 600;
 }
 
 .navRight {
   display: flex;
   align-items: center;
+  gap: 15px;
+}
+
+.darkMode .navbar {
+  background-color: var(--light-dark);
+  border-bottom: 1.5px solid var(--li-light-color);
+}
+
+.darkMode .searchContainer {
+  background: var(--dark-dark);
+}
+
+.darkMode .searchBar {
+  background: var(--dark-dark);
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 5px 12px;
+  border-radius: 10px;
+  border: 1.5px solid var(--teal-light);
 }
 
 .searchBar {
-  padding: 0.8rem;
-  width: 250px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-right: 1rem;
-  font-size: 1rem;
+  border: none;
+  outline: none;
+  padding: 8px;
+  width: 200px;
 }
 
-.searchBar:focus {
-  outline: none;
-  border-color: teal;
+.searchIcon {
+  margin-right: 8px;
+}
+
+.darkMode .searchIcon {
+  color: white;
 }
 
 .toggleButton {
-  padding: 0.6rem 0.8rem;
-  font-size: 1rem;
-  color:  black;
+  background: none;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  border-radius: 70%;
+  margin: 0 10px;
+  color: inherit;
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  padding: 8px;
+  border-radius: 50%;
   transition: background-color 0.3s ease;
 }
 
 .toggleButton:hover {
-  background-color: rgba(0, 128, 128, 0.383);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Hero Section */
-.heroSection {
-  text-align: center;
-  padding: 3rem 2rem;
-  width: 100%;
+.darkMode .toggleButton:hover {
+  background-color: rgba(223, 221, 221, 0.2);
 }
 
-.heroSection h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.heroSection p {
-  font-size: 1.2rem;
-  color: #666;
-}
-
-/* Features Section */
-.featuresSection {
-  width: 100%;
-  padding: 2rem;
-  text-align: center;
-}
-
-.featuresSection h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-
-.features {
+.hero {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: left;
+  padding: 50px 20px;
 }
 
-.feature {
+.heroText {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 250px;
-  text-align: center;
 }
 
-
-.feature h3 {
-  font-size: 1.8rem;
-  color: teal;
-  margin-bottom: 1rem;
-}
-
-.feature p {
-  color: #666;
-  font-size: 1rem;
-}
-
-.icon {
-  font-size: 2.5rem;
-  color: teal;
-  margin-bottom: 1rem;
-}
-
-/* Cards Section */
-.subjectsSection {
-  padding: 2rem;
-  width: 100%;
-  text-align: center;
-}
-
-.subjectsSection h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-
-.cardsContainer {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-/* FAQ Section */
-.faqSection {
-  padding: 3rem 0rem;
-  width: 100%;
-}
-
-.faqSection h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-
-.faqContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.faqItem {
-  width: 100%;
-  max-width: 900px;
-  background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.faqQuestion {
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.faqAnswer {
-  margin-top: 1rem;
-  color: #666;
-}
-
-.faqIcon {
-  transition: transform 0.3s ease;
-}
-
-.rotated {
-  transform: rotate(180deg);
-}
-
-/* Footer */
-.footer {
-  border-top: 2px solid teal;
-  padding: 1.5rem;
-  text-align: center;
-  width: 100%;
-  color: #666;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .navRight {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .searchBar {
-    width: 80%;
-    margin-bottom: 1rem;
-  }
-
-  .feature {
-    width: 100%;
-  }
-
-  .cardsContainer {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .faqContainer {
-    width: 100%;
-  }
-}
-
-/* Subject Card */
-.card {
-  border: 2px solid teal;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  padding: 2rem;
-  text-align: center;
-  transition: box-shadow 0.3s ease;
-  cursor: pointer;
-  margin: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.subjectName {
-  font-size: 1.8rem;
+.heroText h2 {
+  font-size: 4rem;
   font-weight: bold;
-  color: #333;
-  margin-bottom: 1rem;
+  font-family: "Lora", serif;
+  margin-bottom: 0px;
 }
 
-.learnMoreButton {
-  background-color: teal;
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 5px;
+.heroText p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-left: 5px;
+}
+
+.heroText .slogan {
+  font-family: "Open Sans", serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--teal);
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+
+.heroImage img {
+  width: 100%;
+  max-width: 540px;
+}
+
+.exploreBtn {
+  font-size: 1.5rem;
+  margin-left: 5px;
+  width: fit-content;
+  background-color: transparent;
+  color: var(--teal);
+  padding: 10px 20px;
+  border: 2px solid var(--teal);
   cursor: pointer;
-  font-size: 1rem;
+  margin-top: 20px;
+  font-weight: 550;
   transition: background-color 0.3s ease;
 }
 
-.learnMoreButton:hover {
-  background-color: rgba(0, 128, 128, 0.759);
+.exploreBtn:hover {
+  background-color: var(--teal);
+  color: white;
 }
 
-.learnMoreButton:focus {
+.keyFeatures {
+  padding: 25px 0px;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-family: "Lora", serif;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+
+}
+
+.featuresContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.feature {
+  cursor: pointer;
+  flex-basis: 22%;
+  background: var(--off-white);
+  border-radius: 12px;
+  border: 2px solid var(--teal);
+  padding: 25px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.darkMode .feature {
+  background-color: var(--light-dark);
+}
+
+.feature:hover {
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.darkMode .feature:hover {
+  box-shadow: 0px 10px 30px rgba(224, 223, 223, 0.15);
+}
+
+.feature .icon {
+  padding: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.feature h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: var(--teal);
+}
+
+.feature p {
+  position: relative;
+  font-size: 1rem;
+  color: #555;
+}
+
+.darkMode .feature p {
+  color: #cecccc;
+}
+
+
+.trendingDocs {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-family: "Lora", serif;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+  justify-items: center;
+  padding: 0 20px;
+}
+
+.card {
+  background: var(--off-white);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 2px solid var(--teal);
+  overflow: hidden;
+}
+
+.darkMode .card {
+  background-color: var(--light-dark);
+}
+
+.darkMode .card:hover {
+  box-shadow: 0px 12px 24px rgba(228, 227, 227, 0.1);
+}
+
+.card:hover {
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.cardImage {
+  height: 180px;
+  width: 100%;
+  margin-bottom: 15px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .cardImage img {
+  transform: scale(1.1);
+}
+
+.card .subjectName {
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.darkMode .card .subjectName {
+  color: #dddcdc;
+}
+
+.card .learnMoreButton {
+  background-color: var(--teal);
+  color: white;
+  padding: 10px 25px;
+  font-size: 14px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 2px solid var(--teal);
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.card .learnMoreButton:hover {
+  background-color: var(--off-white);
+  color: black;
+  border: 2px solid var(--teal);
+}
+
+.testimonials {
+  position: relative;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonialsContainer {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.testimonialCard {
+  background-color: var(--off-white);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.darkMode .testimonialCard {
+  background-color: var(--light-dark);
+
+  p, .testimonialRole {
+    color: #efecec;
+  }
+}
+
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 2.5px solid var(--teal);
+  object-fit: cover;
+}
+
+.testimonialText {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.testimonialName {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 10px;
+  color: var(--teal);
+}
+
+.testimonialRole {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--teal) !important;
+}
+
+.navButton {
+  position: absolute;
+  top: 62%;
+  transform: translateY(-62%);
+  font-size: 24px;
+  background-color: rgb(171, 231, 231);
+  color: #121212;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1;
+  padding: 12px 18px;
+  border: 2px solid teal;
+}
+
+.prevButton {
+  left: 10px;
+}
+
+.nextButton {
+  right: 10px;
+}
+
+.navButton:hover {
+  background-color: teal;
+  color: white;
+}
+
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.faqBtn {
+  background-color: transparent;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+
+}
+
+.darkMode .faqBtn{
+  color: white;
+}
+
+.faqBtn:hover {
+  color: #666;
+
+}
+
+
+.faq {
+  padding: 60px 20px;
+}
+
+.faqItem {
+  padding: 15px;
+  background-color: var(--off-white);
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 1px solid var(--teal);
+}
+
+.darkMode .faqItem{
+  background-color: var(--light-dark);
+}
+.darkMode .faqItem.active{
+  background-color: var(--dark-dark);
+}
+
+.faqItem:hover {
+  background-color: var(--hover-bg);
+}
+
+.faqItem strong {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  color: var(--teal);
+}
+
+.questionContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.answer {
+  display: none;
+  margin-top: 10px;
+  color: #555;
+}
+
+.faqItem.active .answer {
+  display: block;
+}
+
+.faqItem.active {
+  background-color: white;
+  border-left: 5px solid var(--teal);
+}
+
+.icon {
+  color: var(--teal);
+}
+
+
+.suggestions {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.suggestions p {
+  font-size: 1.2rem;
+  color: #242323;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: "Open Sans", serif;
+}
+
+.darkMode .suggestions p{
+  color: rgb(240, 237, 237);
+}
+
+.suggestionForm {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.suggestionForm label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.darkMode .suggestionForm label{
+  color: #e5e5e5;
+}
+
+.suggestionForm input,
+.suggestionForm textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  width: 100%;
+  max-width: 600px;
   outline: none;
 }
 
-/* Responsive Design for Subject Cards */
+.suggestionForm input:focus,
+.suggestionForm textarea:focus {
+  border-color: var(--teal);
+}
+
+.suggestionForm textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.submitButton {
+  background-color: var(--teal);
+  color: white;
+  padding: 10px 20px;
+  border: 2px solid var(--teal);
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, font-weight 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: transparent;
+  color: var(--teal);
+  font-weight: 500;
+}
+
+/* Success message */
+.successMessage {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+
+.newsletter {
+  padding: 40px;
+  text-align: center;
+}
+
+.newsletter p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-family: "Open Sans", serif;
+}
+
+.emailInput {
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 300px;
+  margin-right: 10px;
+  outline: none;
+}
+
+.emailInput:focus {
+  border-color: var(--teal);
+}
+
+.subscribeBtn {
+  padding: 10px 20px;
+  background-color: var(--teal);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid var(--teal);
+}
+
+.subscribeBtn:hover {
+  background-color: transparent;
+  color: var(--teal);
+  font-weight: 500;
+
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--off-white);
+  border-top: 1.5px solid var(--teal-light);
+  margin-top: 40px;
+}
+
+.footerLinks a {
+  color: var(--teal);
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.darkMode .footer{
+  background-color: var(--light-dark);
+}
+
+
+
+
+
 @media (max-width: 768px) {
-  .card {
+  .hero {
+    padding-top: 0;
+    margin-top: 10vh;
+    flex-direction: column-reverse;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .heroText {
+    align-items: center;
+  }
+
+  .heroText h2 {
+    font-size: 3rem;
+  }
+
+  .heroText p {
+    font-size: 1rem;
+  }
+
+  .heroImage img {
+    max-width: 60%;
+    height: auto;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .featuresContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature {
+    width: 98%;
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+
+  .testimonials {
+    padding: 40px 20px;
+  }
+
+  .testimonialCard {
+    min-height: auto;
+  }
+
+  .testimonialName {
+    font-size: 1rem;
+  }
+
+  .testimonialRole {
+    font-size: 0.8rem;
+  }
+
+  .cardsContainer {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+  .card .subjectName {
+    font-size: 1.1rem;
+  }
+
+  .footerLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerLinks a {
+    margin: 5px 0;
+  }
+
+  .suggestionForm {
+    width: 80%;
+  }
+
+  .newsletter p {
+    font-size: 1rem;
+  }
+
+  .emailInput {
+    width: 70%;
+    margin-right: 5px;
+  }
+
+  .subscribeBtn {
+    padding: 8px 16px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 18px;
+  }
+
+  .navRight {
+    gap: 5px;
+  }
+
+  .toggleButton {
+    margin-right: 0;
+  }
+
+  .searchContainer {
     width: 100%;
-    max-width: 350px;
-    margin: 1rem;
+    max-width: 150px;
+    margin-top: 3.5px;
+    border-radius: 5px;
+    max-height: 35px;
+  }
+
+  .searchBar {
+    max-height: 30px;
+    width: 100%;
+    font-size: 10px;
+  }
+
+  .hero {
+    padding: 20px;
+    min-height: 80vh;
+  }
+
+  .heroImage img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .heroText h2 {
+    font-size: 2rem;
+  }
+
+  .heroText p {
+    font-size: 0.9rem;
+  }
+
+  .keyFeatures {
+    margin-top: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .featuresContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature {
+    flex-basis: 100%;
+    margin-bottom: 15px;
+  }
+
+  .testimonials {
+    padding: 40px 10px;
+  }
+
+  .testimonialCard {
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .testimonialName {
+    font-size: 0.95rem;
+  }
+
+  .testimonialRole {
+    font-size: 0.75rem;
+  }
+
+  .cardsContainer {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  .card .subjectName {
+    font-size: 1rem;
+  }
+
+  .suggestions p {
+    margin-left: 20px;
+  }
+
+  .footerLinks a {
+    margin: 5px 0;
+  }
+
+  .suggestionForm {
+    width: 90%;
+  }
+
+  .newsletter p {
+    font-size: 1rem;
+  }
+
+  .emailInput {
+    width: 60%;
+    margin-right: 5px;
+  }
+
+  .subscribeBtn {
+    padding: 8px 14px;
   }
 }
