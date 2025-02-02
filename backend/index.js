@@ -7,7 +7,12 @@ const apiRoutes = require('./routes/apiRoutes');
 
 const app = express();
 
-app.use(cors());
+app.use(cors(
+    { origin: process.env.FRONTEND_URL,
+        credentials: true,
+        methods: ["GET"]
+     }
+));
 
 app.use(express.json());
 
@@ -15,9 +20,9 @@ connectDB();
 
 const PORT = process.env.PORT;
 
-app.get("/",(request,response)=>{
+app.get("/", (request, response) => {
     response.json({
-        message : "Server is running " + PORT
+        message: "Server is running " + PORT
     })
 })
 
