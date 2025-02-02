@@ -17,7 +17,6 @@ const Layout = () => {
   const { theme } = useContext(ThemeContext);
   
   const { subjectCode } = useParams();
-  console.log(subjectCode);
   const [chapters, setChapters] = useState([]);
   const [expandedChapters, setExpandedChapters] = useState({});
   const [content, setContent] = useState([]);
