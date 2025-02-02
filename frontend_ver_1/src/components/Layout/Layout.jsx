@@ -15,6 +15,7 @@ import { SidebarProvider } from "../../context/SidebarContext";
 
 const Layout = () => {
   const { theme } = useContext(ThemeContext);
+  console.log(useParams);
 
   const { subjectCode } = useParams();
   const [chapters, setChapters] = useState([]);
