@@ -1,4 +1,5 @@
 import React, { useState, useContext, useRef, useEffect } from "react";
+import axios from "axios";
 import styles from "./LandingPage.module.css";
 import SubjectCard from "./SubjectCard";
 import { ThemeContext } from "../../context/ThemeContext";
@@ -176,14 +177,52 @@ const LandingPage = ({ subjects }) => {
     setIsFAQVisible(!isFAQVisible);
   };
 
-  const [topic, setTopic] = useState("");
-  const [message, setMessage] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    topicName: "",
+    description: "",
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const handleSubmitSuggestion = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(
+        `${import.meta.env.VITE_API_BASE_URL}/suggested-topics`,
+        formData
+      );
+      alert("Topic suggested successfully!");
+      setFormData({ username: "", email: "", topicName: "", description: "" });
+    } catch (error) {
+      alert("Error: " + error.response.data.message);
+    }
+  };
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const handleSubmitSubscribe = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/subscriptions`, {
+        name,
+        email,
+      });
+      alert("Subscribed successfully!");
+      setName("");
+      setEmail("");
+    } catch (error) {
+      if (error.response && error.response.status === 400) {
+        alert(error.response.data.message);  
+      } else {
+        alert("An error occurred. Please try again later.");
+      }
+    }
+  };
+  
 
   const [imageUrl, setImageUrl] = useState(null);
 
@@ -293,6 +332,7 @@ const LandingPage = ({ subjects }) => {
                 name={subject.subjectName}
                 subjectCode={subject.subjectCode}
                 onSubjectClick={handleSubjectsClick}
+                imageUrl={subject.subjectImage}
               />
             ))}
           </div>
@@ -383,51 +423,67 @@ const LandingPage = ({ subjects }) => {
           <p>
             Have a topic in mind? Share it with us and help improve our docs!
           </p>
-          {submitted ? (
-            <div className={styles.successMessage}>
-              <p>Thank you for your suggestion! We'll review it soon.</p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className={styles.suggestionForm}>
-              <label htmlFor="topic">Suggested Topic:</label>
-              <input
-                type="text"
-                id="topic"
-                name="topic"
-                placeholder="Enter your suggested topic"
-                value={topic}
-                onChange={(e) => setTopic(e.target.value)}
-                required
-              />
-
-              <label htmlFor="message">Additional Message (optional):</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Provide any additional details"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-              ></textarea>
-
-              <button type="submit" className={styles.submitButton}>
-                Submit Suggestion
-              </button>
-            </form>
-          )}
+          <form onSubmit={handleSubmitSuggestion} className={styles.form}>
+            <input
+              type="text"
+              name="username"
+              placeholder="Your Name"
+              value={formData.username}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              name="topicName"
+              placeholder="Topic Name"
+              value={formData.topicName}
+              onChange={handleChange}
+              required
+            />
+            <textarea
+              name="description"
+              placeholder="Description"
+              value={formData.description}
+              onChange={handleChange}
+              required
+            />
+            <button type="submit" className={styles.submitButton}>Submit Suggestion</button>
+          </form>
         </section>
 
-        <section className={styles.newsletter}>
+        <section className={styles.subsription}>
           <h3 className={styles.sectionTitle}>Stay Updated</h3>
           <p>
             Subscribe to receive the latest docs and updates directly in your
             inbox.
           </p>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className={styles.emailInput}
-          />
-          <button className={styles.subscribeBtn}>Subscribe</button>
+          <form onSubmit={handleSubmitSubscribe} className={styles.form}>
+            <input
+              type="text"
+              placeholder="Enter Your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+            <input
+              type="email"
+              placeholder="Enter Your Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button type="submit" className={styles.subscribeBtn}>
+              Subscribe
+            </button>
+          </form>
         </section>
       </main>
 

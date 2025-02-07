@@ -1,0 +1,129 @@
+.header {
+    position:fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--off-white);
+    border-bottom: 1.5px solid var(--teal-light);
+    width: 100vw;
+    height: 65px;
+    padding: 10px 24px;
+}
+
+.darkMode{
+    background-color: var(--light-dark);
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: var(--teal);
+    font-size: 26px;
+    font-family: "Merriweather", serif !important;
+    font-weight: 600;
+}
+
+.rightNavItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.welcomeText {
+    font-family: "Merriweather", serif !important;
+    font-size: 1.2rem;
+    span {
+        font-weight: 600;
+    }
+}
+
+.darkMode .welcomeText{
+    color: var(--light-gray);
+}
+.darkMode .profileIcon{
+    color: var(--light-gray);
+}
+
+.profileIcon {
+    cursor: pointer;
+    padding: 0.3rem;
+    border-radius: 50%;
+    display: flex;
+}
+
+.profileIcon:hover {
+    background-color: #66666646;
+}
+
+.darkMode .profileIcon:hover{
+    color: white;
+}
+
+.profileDropdown {
+    position: absolute;
+    right: 30px;
+    top: 65px;
+    background: var(--off-white);
+    border: 1.5px solid var(--teal-light);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 220px;
+    text-align: left;
+    animation: fadeIn 0.3s ease-in-out;
+    z-index: 100000 !important;
+}
+
+
+.profileDropdown p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.email {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.logoutButton {
+    background-color: #cb2411cf;
+    color: white;
+    border: none;
+    padding: 0.7rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.logoutButton:hover {
+    background-color: #c0392b;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .logo h1 {
+        font-size: 20px;
+        width: 130px;
+    }
+
+    .welcomeText {
+        display: none;
+    }
+}

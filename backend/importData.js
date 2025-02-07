@@ -23,59 +23,52 @@ const importData = async () => {
     try {
         await connectDB();
 
-        // Read data.json
         const data = JSON.parse(fs.readFileSync('data.json', 'utf-8'));
 
-        // Clear existing data
         await Subject.deleteMany();
         await Chapter.deleteMany();
         await Topic.deleteMany();
 
-        // Insert subjects, chapters, and topics
         for (const subjectData of data.subjects) {
             const chapterIds = [];
 
-            // Create the subject
             const subject = new Subject({
                 subjectCode: subjectData.subjectCode,
+                subjectImage: subjectData.subjectImage,
                 subjectName: subjectData.subjectName,
                 subjectIntroContent: subjectData.subjectIntroContent,
             });
             await subject.save();
 
             for (const chapterData of subjectData.chapters) {
-                // Create the chapter first
                 const chapter = new Chapter({
                     chapterCode: chapterData.chapterCode,
                     chapterName: chapterData.chapterName,
                     chapterIntroContent: chapterData.chapterIntroContent,
-                    subject: subject._id, // Associate chapter with the subject
+                    subject: subject._id, 
                 });
                 await chapter.save();
 
                 const topicIds = [];
 
-                // Create topics associated with the chapter
                 for (const topicData of chapterData.topics) {
                     const topic = new Topic({
                         topicId: topicData.topicId,
                         topicName: topicData.topicName,
                         contentList: topicData.contentList,
                         mainContent: topicData.mainContent,
-                        chapter: chapter._id, // Associate topic with the chapter
+                        chapter: chapter._id, 
                     });
                     await topic.save();
                     topicIds.push(topic._id);
                 }
 
-                // Update chapter with its topics
                 chapter.topics = topicIds;
                 await chapter.save();
 
                 chapterIds.push(chapter._id);
             }
 
-            // Update the subject with its chapters
             subject.chapters = chapterIds;
             await subject.save();
         }

@@ -6,9 +6,9 @@ const { getChapterByCode } = require('../controllers/chapterController');
 const { getTopicById } = require('../controllers/topicController');
 
 // Routes
-router.get('/api', getSubjects);
-router.get('/api/:subjectCode', getSubjectByCode);
-router.get('/api/:subjectCode/:chapterCode', getChapterByCode);
-router.get('/api/:subjectCode/:chapterCode/:topicId', getTopicById);
+router.get('/', getSubjects);
+router.get('/:subjectCode', getSubjectByCode);
+router.get('/:subjectCode/:chapterCode', getChapterByCode);
+router.get('/:subjectCode/:chapterCode/:topicId', getTopicById);
 
 module.exports = router;

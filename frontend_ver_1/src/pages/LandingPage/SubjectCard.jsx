@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './LandingPage.module.css';
 
 const SubjectCard = ({ name, subjectCode, onSubjectClick, imageUrl }) => {
+  
   const handleClick = () => {
     onSubjectClick(subjectCode);
   };
@@ -9,7 +10,7 @@ const SubjectCard = ({ name, subjectCode, onSubjectClick, imageUrl }) => {
   return (
     <div className={styles.card} onClick={handleClick}>
       <div className={styles.cardImage}>
-        <img src={`https://picsum.photos/300/200?random=${Math.random()}`} alt={name} />
+        <img src={imageUrl} alt={name} />
       </div>
       <h2 className={styles.subjectName}>{name}</h2>
       <button className={styles.learnMoreButton}>Learn More</button>

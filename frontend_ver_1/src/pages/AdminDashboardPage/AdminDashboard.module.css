@@ -1,0 +1,33 @@
+.dashboardContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+.dashboardLayout {
+    display: flex;
+    flex-grow: 1;
+}
+
+.mainContentOpen {
+    margin-left: 240px;
+    transition: margin-left 0.3s ease;
+}
+
+.mainContentClose {
+    margin-left: 70px;
+    transition: margin-left 0.3s ease;
+}
+
+.mainContent {
+    flex-grow: 1;
+    padding: 2rem;
+    margin-top: 65px;
+}
+
+@media screen and (max-width: 768px) {
+    .mainContent {
+        padding: 1rem;
+    }
+}

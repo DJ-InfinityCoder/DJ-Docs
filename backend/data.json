@@ -2,6 +2,7 @@
   "subjects": [
     {
       "subjectCode": "os",
+      "subjectImage": "https://raw.githubusercontent.com/DJ-InfinityCoder/db/refs/heads/main/db/assets/os/subImage/Operating_systems_Card_Image.jpg",
       "subjectName": "Operating Systems",
       "subjectIntroContent": [
         {

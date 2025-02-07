@@ -1,0 +1,204 @@
+.sidebar {
+    width: 240px;
+    background-color: var(--off-white);
+    padding-top: 2rem;
+    border-right: 1.5px solid var(--teal-light);
+    position: fixed;
+    min-height: 100vh;
+    top: 65px;
+
+}
+
+.darkMode {
+    background-color: var(--light-dark);
+}
+
+.hamburgerIcon {
+    display: none;
+}
+
+
+.sidebarList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    padding-right: 0.5rem;
+}
+
+.sidebarList li {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    width: 100%;
+    margin-bottom: 0.3rem;
+    transition: all 0.2s ease;
+}
+
+.sidebarList li:hover {
+    background-color: var(--teal);
+
+    svg {
+        color: white;
+    }
+
+    .sidebarText {
+        color: white;
+    }
+}
+
+.darkMode svg {
+    color: var(--light-gray);
+}
+
+.darkMode .sidebarText {
+    color: var(--light-gray);
+}
+
+.darkMode .sidebarList li:hover {
+    svg {
+        color: black;
+    }
+
+    .sidebarText {
+        color: black;
+    }
+}
+
+
+.sidebarList li svg {
+    margin-right: 1rem;
+}
+
+.sidebarLink {
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+}
+
+.activeLink {
+    background-color: var(--teal);
+
+    svg {
+        color: white;
+    }
+
+    .sidebarText {
+        color: white;
+    }
+
+    width: 100%;
+}
+
+.darkMode .activeLink {
+    svg {
+        color: black;
+    }
+
+    .sidebarText {
+        color: black;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .sidebar {
+        overflow-x: hidden;
+        height: auto;
+        width: 70px;
+        padding-top: 1rem;
+        transition: width 0.3s ease;
+    }
+
+    @keyframes expandSidebar {
+        0% {
+            width: 70px;
+        }
+
+        100% {
+            width: 240px;
+        }
+    }
+
+    @keyframes collapseSidebar {
+        0% {
+            width: 240px;
+        }
+
+        100% {
+            width: 70px;
+        }
+    }
+
+
+    .hamburgerIcon {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        padding: 0.6rem;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        border-radius: 50%;
+        margin-left: 0.95rem;
+    }
+
+    .darkMode .hamburgerIcon {
+        color: var(--light-gray);
+    }
+
+    .darkMode .hamburgerIcon:hover {
+        color: white;
+    }
+
+    .hamburgerIcon:hover {
+        background-color: #66666646;
+    }
+
+    .sidebarList {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .sidebarList li {
+        height: 50px;
+        width: 100%;
+        padding: 0.8rem 1.5rem;
+        overflow: hidden;
+
+    }
+
+    .sidebarLink {
+        height: 50px;
+        display: flex;
+        align-items: center;
+    }
+
+
+
+    .sidebar.sidebarOpen {
+        animation: expandSidebar 0.3s ease forwards;
+
+    }
+
+    .sidebar.sidebarClose {
+        width: 70px;
+        animation: collapseSidebar 0.3s ease forwards;
+
+        .sidebarText {
+            display: none;
+        }
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .sidebarList li {
+        font-size: 0.9rem;
+    }
+
+}

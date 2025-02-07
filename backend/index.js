@@ -1,20 +1,25 @@
 const express = require('express');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 const connectDB = require('./config/db');
 require('dotenv').config();
 
 const apiRoutes = require('./routes/apiRoutes');
+const adminRoutes = require("./routes/adminRoutes");
+const subscriptionRoutes = require("./routes/subscriptionRoutes");
+const suggestedTopicRoutes = require("./routes/suggestedTopicRoutes");
 
 const app = express();
 
 app.use(cors(
     { origin: process.env.FRONTEND_URL,
         credentials: true,
-        methods: ["GET"]
+        methods: ["GET", "POST", "DELETE"]
      }
 ));
 
 app.use(express.json());
+app.use(cookieParser());
 
 connectDB();
 
@@ -26,6 +31,9 @@ app.get("/", (request, response) => {
     })
 })
 
-app.use('/', apiRoutes);
+app.use('/api', apiRoutes);
+app.use("/admin", adminRoutes);
+app.use("/subscriptions", subscriptionRoutes);
+app.use("/suggested-topics", suggestedTopicRoutes);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

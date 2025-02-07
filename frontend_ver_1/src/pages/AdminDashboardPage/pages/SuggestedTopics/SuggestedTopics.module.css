@@ -1,0 +1,160 @@
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--off-white);
+    border: 1.5px solid var(--teal-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.darkMode {
+    background-color: var(--light-dark);
+}
+
+.container h1 {
+    text-align: center;
+    color: var(--teal);
+    font-size: 26px;
+    margin-bottom: 15px;
+    font-family: "Libre Baskerville", serif;
+}
+
+.loading,
+.error {
+    text-align: center;
+    font-size: 18px;
+    color: red;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.listItem {
+    background: white;
+    border: 1.5px solid var(--teal-light);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* position: relative; */
+}
+
+.darkMode .listItem {
+    background-color: var(--dark-dark);
+}
+
+.topicContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-size: 18px;
+    color: #333;
+
+    strong {
+        font-family: "Lora", serif;
+    }
+
+    span {
+        font-family: "Lora", serif;
+    }
+}
+
+.darkMode .label {
+    color: var(--light-gray);
+}
+
+.topicTitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--teal);
+}
+
+.topicDetails {
+    font-size: 14px;
+    color: #666;
+}
+
+.description {
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.darkMode .topicDetails, 
+.darkMode .description{
+    color: #c6c6c6;
+}
+
+.deleteButton {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    align-self: flex-end;
+    margin-top: 10px;
+}
+
+.deleteButton:hover {
+    background-color: #c9302c;
+}
+
+
+@media screen and (max-width: 480px) {
+    .container {
+        max-width: 95%;
+        padding: 15px;
+        margin: 10px auto;
+        border-radius: 6px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    }
+
+    .container h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .listItem {
+        padding: 15px;
+        border-radius: 6px;
+        gap: 8px;
+    }
+
+    .topicContainer {
+        gap: 6px;
+    }
+
+    .label {
+        font-size: 16px;
+    }
+
+    .topicTitle {
+        font-size: 16px;
+    }
+
+    .topicDetails {
+        font-size: 12px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .deleteButton {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        margin-top: 8px;
+    }
+}

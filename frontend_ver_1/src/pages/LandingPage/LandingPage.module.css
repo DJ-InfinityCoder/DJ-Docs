@@ -305,7 +305,7 @@
 }
 
 .darkMode .card .subjectName {
-  color: #dddcdc;
+  color: #ffffff;
 }
 
 .card .learnMoreButton {
@@ -319,11 +319,17 @@
   transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
+.darkMode .card .learnMoreButton{
+  color: black;
+}
+
 .card .learnMoreButton:hover {
   background-color: var(--off-white);
   color: black;
   border: 2px solid var(--teal);
 }
+
+
 
 .testimonials {
   position: relative;
@@ -388,7 +394,7 @@
 }
 
 .swiper-pagination-bullet {
-  background-color: var(--teal) !important;
+  background-color: var(--teal);
 }
 
 .navButton {
@@ -527,44 +533,34 @@
   color: rgb(240, 237, 237);
 }
 
-.suggestionForm {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.form {
+  padding: 20px;
+  width: 370px;
 }
 
-.suggestionForm label {
-  font-size: 14px;
-  font-weight: bold;
-  color: #333;
-}
-
-.darkMode .suggestionForm label{
-  color: #e5e5e5;
-}
-
-.suggestionForm input,
-.suggestionForm textarea {
+.form input,
+.form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
   padding: 10px;
   border: 1px solid #ddd;
   font-size: 16px;
-  width: 100%;
-  max-width: 600px;
   outline: none;
 }
 
-.suggestionForm input:focus,
-.suggestionForm textarea:focus {
-  border-color: var(--teal);
-}
-
-.suggestionForm textarea {
+.form textarea {
   height: 120px;
   resize: vertical;
 }
 
+.form input:focus,
+.form textarea:focus {
+  border-color: var(--teal);
+}
+
 .submitButton {
+  width: 100%;
   background-color: var(--teal);
   color: white;
   padding: 10px 20px;
@@ -581,40 +577,31 @@
   font-weight: 500;
 }
 
-/* Success message */
-.successMessage {
-  background-color: #d4edda;
-  color: #155724;
-  padding: 15px;
-  border-radius: 8px;
-  margin-top: 20px;
+.darkMode .form input,
+.darkMode .form textarea{
+  background-color: var(--light-dark);
+  color: white;
 }
 
 
-.newsletter {
-  padding: 40px;
-  text-align: center;
+
+
+.subsription {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.newsletter p {
+.subsription p {
   font-size: 1.2rem;
   margin-bottom: 20px;
   font-family: "Open Sans", serif;
 }
 
-.emailInput {
-  border: 1px solid #ddd;
-  padding: 10px;
-  width: 300px;
-  margin-right: 10px;
-  outline: none;
-}
-
-.emailInput:focus {
-  border-color: var(--teal);
-}
-
 .subscribeBtn {
+  width: 100%;
   padding: 10px 20px;
   background-color: var(--teal);
   color: white;
@@ -622,6 +609,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   border: 2px solid var(--teal);
+  font-size: 16px;
 }
 
 .subscribeBtn:hover {
@@ -813,6 +801,10 @@
 
   .testimonials {
     padding: 40px 10px;
+  }
+
+  .navButton{
+    display: none;
   }
 
   .testimonialCard {
